@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-x2tq%8j&=5#8(n=kck=78@&f%!@7ic1))!k_-g)3yd+7w-6^ce
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-kanchihari-myblogprojec-j5313u0y8tc.ws-eu110.gitpod.io',
+ALLOWED_HOSTS = ['8000-kanchihari-myblogprojec-dogidmnjac7.ws-eu110.gitpod.io',
                 '.herokuapp.com']
 
 
@@ -89,6 +89,12 @@ WSGI_APPLICATION = 'my_blogproject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS =[
+    "https://*.gitpodapp.com",
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation
