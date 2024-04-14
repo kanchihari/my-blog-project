@@ -18,6 +18,7 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-x2tq%8j&=5#8(n=kck=78@&f%!@7ic1))!k_-g)3yd+7w-6^ce
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-kanchihari-myblogprojec-ejj31tazemn.ws-eu110.gitpod.io',
+ALLOWED_HOSTS = ['8000-kanchihari-myblogprojec-169dvsdw8ij.ws-eu110.gitpod.io',
                 '.herokuapp.com']
 
 
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'my_blogproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,7 +93,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS =[
-    "https://8000-kanchihari-myblogprojec-ejj31tazemn.ws-eu110.gitpod.io",
+    "https://8000-kanchihari-myblogprojec-169dvsdw8ij.ws-eu110.gitpod.io",
     "https://*.herokuapp.com"
 ]
 
@@ -132,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
